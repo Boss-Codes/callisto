@@ -1,6 +1,9 @@
 # Callisto 
 
-Callisto is a utility bot. It will be a multi-purpose bot, which will have a lot of features to help run and manage your Discord Server. It will have the following features: 
+Callisto is a Discord multi-purpose bot, designed to help run your server. It's written in JavaScript using the Eris libray to communicate to Discord, and MongoDB at the database. 
+
+## Features
+*These are coming in the future unless crossed off*
 
 - Utility/Information Comands (serverinfo, roleinfo, whois, etc)
 - Manager Module (addrole, role, etc)
