@@ -21,7 +21,7 @@ Callisto is a Discord multi-purpose bot, designed to help run your server. It's 
 If you want to contribute and help out with the development of Eve, feel free to DM me on Discord (boss#0001), or make a merge request and I will review it and give my feedback! 
 
 ## License 
-Eve is licensed under the GNU GPLv-3 License: 
+Callisto is licensed under the GNU GPLv-3 License: 
 > You may copy, distribute and modify the software as long as you track changes/dates in source files. Any modifications to or software including (via compiler) GPL-licensed code must also be made available under the GPL along with build & install instructions.
 
 *That TLDR was fethced from [TLDRLegal](https://tldrlegal.com/license/gnu-general-public-license-v3-(gpl-3)), please also read the full [license](https://github.com/Boss-Codes/callisto/blob/master/LICENSE) if you plan on self-hosting or using the source code.* 
