@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "Callisto is a Discord multi-purpose bot, designed to help run your server. It's written in JavaScript using the Eris libray to communicate to Discord, and MongoDB at the database.",
   "main": "main.js",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "eris": "^0.11.2",
+    "fs": "^0.0.1-security"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,10 +21,5 @@
   "bugs": {
     "url": "https://github.com/Boss-Codes/callisto/issues"
   },
-  "homepage": "https://github.com/Boss-Codes/callisto#readme",
-  "dependencies": {
-    "dotenv": "^8.2.0",
-    "eris": "^0.11.2",
-    "fs": "0.0.1-security"
-  }
+  "homepage": "https://github.com/Boss-Codes/callisto#readme"
 }
