@@ -1,9 +1,0 @@
-# NPM Stuff 
-/node_modules
-
-# Bot Stuff 
-/.env
-
-# Misc Stuff 
-/package.json
-/package-lock.json
