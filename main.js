@@ -14,15 +14,14 @@ const callisto = new Client(process.env.TOKEN,{
     disableEveryone: true, 
     getAllUsers: true, 
     messageLimit: 100,
+    restMode: true
 })
 
 /* New collections for stuff */
 callisto.commands = new Collection();
 callisto.aliases = new Collection();
 callisto.events = new Collection(); 
-
 callisto.categories = readdirSync('./commands')
-callisto.eventCategories = readdirSync('./events')
 
 /* Command Handler */
 readdirSync('./commands/').forEach(dir => { 
@@ -40,21 +39,15 @@ readdirSync('./commands/').forEach(dir => {
       console.log(`[Callisto] Commands Loaded`)
 
 /* Event Handler */ 
-readdirSync('./events/').forEach(dir => { 
+
     const events = readdirSync(`./events/`).filter(file => file.endsWith('.js')); 
     for (let file of events) { 
         const evt = require(`./events/${file}`)
         let eName = file.split('.')[0]
         callisto.on(eName, evt.bind(null, callisto))
-    }
+    }; 
 
-    for (let file of events) { 
-        let pull = require(`./events/${file}`); 
-    }
-    console.log(`[Callisto] Events Loaded`)
-
-});
-
+console.log(`[Callisto] Events Loaded`)
 
 /* Login */
 callisto.connect()
