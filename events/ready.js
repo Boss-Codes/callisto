@@ -30,7 +30,7 @@ module.exports = async (callisto, msg) => {
                         
                     }, 
                     { 
-                        name: 'Unser Count', 
+                        name: 'User Count', 
                         value: callisto.users.size
                     }, 
                     { 
