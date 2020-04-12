@@ -1,5 +1,6 @@
 # Bot Stuff 
 /.env
+.vscode
 
 # NPM Stuff 
 /node_modules 
