@@ -1,7 +1,6 @@
 const eris = require('eris'); 
-
-module.exports = async (callisto, msg) => {
-
+const { callisto } = require('../main.js'); 
+callisto.on('ready', async () => { 
     callisto.editStatus({
         status: 'online', 
         game: { 
@@ -47,4 +46,5 @@ module.exports = async (callisto, msg) => {
         
     })
 console.log(`[Callisto] Connected to Discord`)
-}
+})
+

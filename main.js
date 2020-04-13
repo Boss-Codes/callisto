@@ -5,6 +5,7 @@
 
 /* Eris */
 const { Client, Collection } = require('eris'); 
+const { Command } = require('./classes/Command.js')
 const { config } = require('dotenv'); 
 const { fs, readdir, readdirSync } = require('fs'); 
 config({
@@ -15,23 +16,35 @@ const callisto = new Client(process.env.TOKEN,{
     getAllUsers: true, 
     messageLimit: 100,
     restMode: true
-})
+});
+
+module.exports.callisto = callisto;
 
 /* New collections for stuff */
-callisto.commands = new Eris.Collection(Command)
+callisto.commands = new Collection(Command)
 callisto.aliases = new Collection();
 callisto.events = new Collection(); 
 callisto.categories = readdirSync('./commands')
 
 /* Command Handler */
+readdirSync(`./commands/`).forEach(dir => { 
+    const commands = readdirSync(`./commands/${dir}/`).filter(file => file.endsWith('.js'))
 
+    for (let file of commands) { 
+        let pull = require(`./commands/${dir}/${file}`)
+        let CmdClass = new pull.cmd()
+        callisto.commands.add(CmdClass)
+        if (pull.aliases && Array.isArray(pull.aliases)) pull.aliases.forEach(alias => client.aliases.set(alias, pull.name));
+    }
+    
+
+})
+console.log(`[Callisto] Loaded Commands`)
 
 /* Event Handler */ 
     const events = readdirSync(`./events/`).filter(file => file.endsWith('.js')); 
     for (let file of events) { 
         const evt = require(`./events/${file}`)
-        let eName = file.split('.')[0]
-        callisto.on(eName, evt.bind(null, callisto))
     }; 
 
 console.log(`[Callisto] Events Loaded`)
