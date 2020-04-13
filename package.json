@@ -4,9 +4,11 @@
   "description": "Callisto is a Discord multi-purpose bot, designed to help run your server. It's written in JavaScript using the Eris libray to communicate to Discord, and MongoDB at the database.",
   "main": "main.js",
   "dependencies": {
+    "ascii-table": "0.0.9",
     "dotenv": "^8.2.0",
     "eris": "^0.11.2",
     "fs": "^0.0.1-security",
+    "moment": "^2.24.0",
     "pm2": "^4.2.3"
   },
   "devDependencies": {},
