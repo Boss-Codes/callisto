@@ -18,28 +18,15 @@ const callisto = new Client(process.env.TOKEN,{
 })
 
 /* New collections for stuff */
-callisto.commands = new Collection();
+callisto.commands = new Eris.Collection(Command)
 callisto.aliases = new Collection();
 callisto.events = new Collection(); 
 callisto.categories = readdirSync('./commands')
 
 /* Command Handler */
-readdirSync('./commands/').forEach(dir => { 
-    const commands = readdirSync(`./commands/${dir}/`).filter(file => file.endsWith('.js')); 
 
-    for (let file of commands) { 
-        let pull = require(`./commands/${dir}/${file}`); 
-        if (pull.aliases && Array.isArray(pull.aliases)) pull.aliases.forEach(alias => client.aliases.set(alias, pull.name)); 
-        if (pull.name) { 
-            callisto.commands.set(pull.name, pull); 
-        }
-            continue; 
-        }
-      });
-      console.log(`[Callisto] Commands Loaded`)
 
 /* Event Handler */ 
-
     const events = readdirSync(`./events/`).filter(file => file.endsWith('.js')); 
     for (let file of events) { 
         const evt = require(`./events/${file}`)

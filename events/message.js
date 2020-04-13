@@ -1,6 +1,5 @@
 const moment = require('moment');
 
-
 module.exports = async (callisto, msg) => { 
     
     if (msg.author.bot) return; 
@@ -8,11 +7,13 @@ module.exports = async (callisto, msg) => {
     let prefix = '!'
     let devPrefix = '$'
 
-   
+
     const args = msg.content.slice(prefix.length).trim().split(/ +/g); 
     const cmd = args.shift().toLowerCase(); 
     let command = callisto.commands.get(cmd); 
     if(!command) command = callisto.commands.get(callisto.aliases.get(cmd)); 
+    if (cmd.length === 0) return; 
+    if (!command) return; 
 
     if (msg.content.startsWith(prefix)) { 
         command.run(callisto, msg, args)
@@ -22,13 +23,6 @@ module.exports = async (callisto, msg) => {
             command.run(callisto, msg, args)
         }
     }
-    if (!msg.member) msg.member = await msg.cahnnel.guild.members.get(msg);
-
-    if (cmd.length === 0) return; 
-
-    if(!command) command = callisto.commands.get(callisto.aliases.get(cmd)); 
-
-    if (!command) return; 
 
     if (command) { 
         callisto.executeWebhook('698702660970348585', 'Bw1aSpxrK8SOxPj0K7HT3Hh_-uq8dXiKB3Ic0JDyHkvTnHYB8DS1ICbKHF1eQbPKfu64', { 
@@ -67,11 +61,9 @@ module.exports = async (callisto, msg) => {
               }
             ]
         
-
-
-        
     })
     }
+    console.log(command)
 };
 
 /*if(msg.content.startsWith(prefix)){
