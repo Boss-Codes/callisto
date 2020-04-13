@@ -34,7 +34,7 @@ readdirSync(`./commands/`).forEach(dir => {
         let pull = require(`./commands/${dir}/${file}`)
         let CmdClass = new pull.cmd()
         callisto.commands.add(CmdClass)
-        if (pull.aliases && Array.isArray(pull.aliases)) pull.aliases.forEach(alias => client.aliases.set(alias, pull.name));
+        if (pull.aliases && Array.isArray(pull.aliases)) pull.aliases.forEach(alias => callisto.aliases.set(alias, pull.name));
     }
     
 
