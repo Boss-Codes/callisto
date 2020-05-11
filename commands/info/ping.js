@@ -1,14 +1,8 @@
 const { Command } = require('../../classes/Command.js'); 
 
 class Ping extends Command { 
-    constructor(){
-    super()
-        this.name = 'ping', 
-        this.description = 'Pongs the bot', 
-        this.usage = '!ping', 
-        this.example = null; 
-        this.permissions = 'User', 
-        this.module = 'Info'
+    constructor(name, description, usage, module){
+    super('ping', 'Pings the bot', '!ping', null, null, ['pong'], 'info')
     }
 
     async execute(callisto, msg) { 
