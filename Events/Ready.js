@@ -1,5 +1,7 @@
 const eris = require('eris'); 
 const { callisto } = require('../main.js'); 
+let logTime = new Date().toLocaleTimeString(); 
+let logDate = new Date().toLocaleDateString()
 callisto.on('ready', async () => { 
     callisto.editStatus('online', {name: 'users run !help', type: 2})
     
@@ -13,25 +15,7 @@ callisto.on('ready', async () => {
                 }, 
                 color: '0162255',
     
-                fields: [
-                    { 
-                        name: 'Username', 
-                        value: `${callisto.user.username}#${callisto.user.discriminator}`
-                    }, 
-                    { 
-                        name: 'Guild Count', 
-                        value: callisto.guilds.size
-                        
-                    }, 
-                    { 
-                        name: 'User Count', 
-                        value: callisto.users.size
-                    }, 
-                    { 
-                        name: 'Time', 
-                        value: `${new Date()}`
-                    }
-                ]
+                description: `Connected to Discord!\n**Guilds:** ${callisto.guilds.size}\n**Users:** ${callisto.users.size}\n**Time:** ${logDate} (${logTime})`
               }
             ]
         
@@ -39,6 +23,6 @@ callisto.on('ready', async () => {
 
         
     })
-console.log(`[Callisto] Connected to Discord`)
+console.log(`[Callisto] [${logDate}] Connected to Discord`)
 })
 

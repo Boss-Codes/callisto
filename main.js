@@ -3,10 +3,13 @@
 * Copyright 2020 @boss#0001
 */
 
-/* Eris */
+/* Requiring Stuff Needed  */
 const { Client, Collection } = require('eris'); 
 const { Command } = require('./Classes/Command.js')
 const { config } = require('dotenv'); 
+let logDate = new Date().toLocaleTimeString(); 
+const mongooseFile = require('./Database/Mongoose.js')
+const mongoose = require('mongoose'); 
 const { fs, readdir, readdirSync } = require('fs'); 
 config({
     path: __dirname + '/.env'
@@ -20,7 +23,7 @@ const callisto = new Client(process.env.TOKEN,{
 
 module.exports.callisto = callisto;
 
-/* New collections for stuff */
+/* New collections for Commands/Events, etc */
 callisto.commands = new Collection(Command)
 callisto.aliases = new Collection();
 callisto.events = new Collection(); 
@@ -39,7 +42,7 @@ readdirSync(`./Commands/`).forEach(dir => {
     
 
 })
-console.log(`[Callisto] Loaded Commands`)
+console.log(`[Callisto] [${logDate}] Loaded Commands`)
 
 /* Event Handler */ 
     const events = readdirSync(`./Events/`).filter(file => file.endsWith('.js')); 
@@ -47,7 +50,7 @@ console.log(`[Callisto] Loaded Commands`)
         const evt = require(`./Events/${file}`)
     }; 
 
-console.log(`[Callisto] Events Loaded`)
+console.log(`[Callisto] [${logDate}] Loaded Events`)
 
 /* Login */
 callisto.connect()
