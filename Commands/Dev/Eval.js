@@ -1,9 +1,9 @@
-const { Command } = require('../../classes/Command.js'); 
+const { Command } = require('../../Classes/Command.js'); 
 const config = require('../../config.json')
 
 class Eval extends Command { 
     constructor(name, description, usage, example, permissions, aliases){
-        super('eval', 'Evaluates JavaScript code', '!eval [code]', '!eval callisto.CreateMessage(msg.channel.id, \'Hi\'', 'Owner', ['e'])
+        super('eval', 'Evalulates JavaScript code', '!eval <code>', '!eval callisto', 'Developer', ['e'], 'Dev')
     }
     
     async execute(callisto, msg, args) { 

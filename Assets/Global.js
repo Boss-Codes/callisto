@@ -8,11 +8,11 @@ global.dnd = '<:callistoDnd:699782811686797432>'
 global.offline = '<:callistoOffline:699782609147789322>'
 
 module.exports = { 
-    version: version, 
-    success: success, 
-    error: error, 
-    online: online, 
-    idle: idle,
-    dnd: dnd,
-    offline: offline
-  }
+    version: global.version, 
+    success: global.success, 
+    error: global.error, 
+    online: global.online, 
+    idle: global.idle,
+    dnd: global.dnd,
+    offline: global
+}
