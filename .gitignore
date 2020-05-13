@@ -1,5 +1,6 @@
 # Bot Stuff 
 /.env
+/.config.json
 
 # NPM stuff 
 /node_modules
