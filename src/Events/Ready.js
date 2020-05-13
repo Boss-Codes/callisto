@@ -1,5 +1,6 @@
 const eris = require('eris'); 
-const { callisto } = require('../main.js'); 
+const { callisto } = require('../../main.js'); 
+const { readFile } = require('fs'); 
 let logTime = new Date().toLocaleTimeString(); 
 let logDate = new Date().toLocaleDateString()
 callisto.on('ready', async () => { 
@@ -23,6 +24,6 @@ callisto.on('ready', async () => {
 
         
     })
-console.log(`[Callisto] [${logDate}] Connected to Discord`)
+return console.log(`[Callisto] [${logTime}] Connected to Discord`)
 })
 

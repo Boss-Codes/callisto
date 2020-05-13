@@ -5,10 +5,10 @@
 
 /* Requiring Stuff Needed  */
 const { Client, Collection } = require('eris'); 
-const { Command } = require('./Classes/Command.js')
+const { Command } = require('./src/Core/Classes/Command.js')
 const { config } = require('dotenv'); 
 let logDate = new Date().toLocaleTimeString(); 
-const mongooseFile = require('./Database/Mongoose.js')
+const mongooseFile = require('./src/MongoDB/Mongoose.js')
 const mongoose = require('mongoose'); 
 const { fs, readdir, readdirSync } = require('fs'); 
 config({
@@ -18,7 +18,10 @@ const callisto = new Client(process.env.TOKEN,{
     disableEveryone: true, 
     getAllUsers: true, 
     messageLimit: 100,
-    restMode: true
+    restMode: true, 
+    autoreconnect: true, 
+    defaultImageFormat: 'png', 
+    defaultImageSize: 2048
 });
 
 module.exports.callisto = callisto;
@@ -27,14 +30,14 @@ module.exports.callisto = callisto;
 callisto.commands = new Collection(Command)
 callisto.aliases = new Collection();
 callisto.events = new Collection(); 
-callisto.categories = readdirSync('./Commands')
+callisto.categories = readdirSync('./src/Modules')
 
 /* Command Handler */
-readdirSync(`./Commands/`).forEach(dir => { 
-    const commands = readdirSync(`./Commands/${dir}/`).filter(file => file.endsWith('.js'))
+readdirSync(`./src/Modules/`).forEach(dir => { 
+    const commands = readdirSync(`./src/Modules/${dir}/`).filter(file => file.endsWith('.js'))
 
     for (let file of commands) { 
-        let pull = require(`./Commands/${dir}/${file}`)
+        let pull = require(`./src/Modules/${dir}/${file}`)
         let CmdClass = new pull.cmd()
         callisto.commands.add(CmdClass)
         
@@ -45,9 +48,9 @@ readdirSync(`./Commands/`).forEach(dir => {
 console.log(`[Callisto] [${logDate}] Loaded Commands`)
 
 /* Event Handler */ 
-    const events = readdirSync(`./Events/`).filter(file => file.endsWith('.js')); 
+    const events = readdirSync(`./src/Events/`).filter(file => file.endsWith('.js')); 
     for (let file of events) { 
-        const evt = require(`./Events/${file}`)
+        const evt = require(`./src/Events/${file}`)
     }; 
 
 console.log(`[Callisto] [${logDate}] Loaded Events`)

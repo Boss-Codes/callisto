@@ -9,11 +9,11 @@ Callisto is a Discord multi-purpose bot, designed to help run your server. It's 
 - Manager Module (addrole, role, etc)
 - Fully working Moderation Logs (possibly cases)
 - Fully functioning Moderation 
-- Possibly Economy 
-- Tickets
-- Modmail (maybe)
+- ~~Possibly Economy~~
+- ~~Tickets~~
+- ~~Modmail (maybe)~~
 - Fun Commands 
-- Tags 
+- ~~Tags~~
 - Welcome/Greeting features 
 - Full event logging 
 

@@ -1,5 +1,5 @@
-const { Command } = require('../../Classes/Command.js'); 
-const config = require('../../config.json')
+const { Command } = require('../../Core/Classes/Command.js'); 
+const config = require('../../../config.json')
 
 class Eval extends Command { 
     constructor(name, description, usage, example, permissions, aliases){
@@ -7,6 +7,7 @@ class Eval extends Command {
     }
     
     async execute(callisto, msg, args) { 
+        if(!config.owner.includes(msg.author.id)) return; 
         const content = msg.content.split(' ').slice(1).join(' ');
             const result = new Promise((resolve, reject) => resolve(eval(content)));
 
@@ -22,7 +23,7 @@ class Eval extends Command {
                 console.error(err); 
                 err = err.toString(); 
 
-                if (err.includes(callisto.token)) err = err.replace(callisto.token, "So sorry sir/ma'am, cannot give yout that information."); 
+                if (err.includes(callisto.token)) err = err.replace(callisto.token, "So sorry sir/ma'am, cannot give you that information."); 
 
                 return callisto.createMessage(msg.channel.id, `\`\`\`js\n${err}\`\`\``); 
             });

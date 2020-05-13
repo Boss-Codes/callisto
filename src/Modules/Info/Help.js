@@ -1,5 +1,5 @@
-const { Command } = require('../../Classes/Command.js'); 
-const { error } = require('../../Assets/Global.js')
+const { Command } = require('../../Core/Classes/Command.js'); 
+const { error } = require('../../Core/Utils/Global.js')
 
 class Help extends Command { 
     constructor(name, description, usage, example, aliases, module){
@@ -64,7 +64,7 @@ class Help extends Command {
                 description: desc,
                 color: 3455723,
                 footer: { 
-                    name: `Syntax: <> = required | [] = optional`
+                    text: `Syntax: <> = required | [] = optional`
                 }
             }
         })

@@ -1,5 +1,5 @@
 const moment = require('moment');
-const { callisto } = require('../main.js')
+const { callisto } = require('../../main.js'); 
 callisto.on('messageCreate', async msg => { 
     let prefix = '!';
     let devPrefix = '$'

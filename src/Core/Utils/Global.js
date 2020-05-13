@@ -6,6 +6,7 @@ global.online = '<:callistoOnline:699782570950524938>'
 global.idle = '<:callistoIdle:699782668165840947>'
 global.dnd = '<:callistoDnd:699782811686797432>'
 global.offline = '<:callistoOffline:699782609147789322>'
+global.defaultColor = 65310
 
 module.exports = { 
     version: global.version, 
@@ -14,5 +15,6 @@ module.exports = {
     online: global.online, 
     idle: global.idle,
     dnd: global.dnd,
-    offline: global
+    offline: global, 
+    defaultColor: global.defaultColor
 }
