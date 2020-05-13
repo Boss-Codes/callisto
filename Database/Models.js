@@ -6,6 +6,6 @@ const GuildModel = new Schema({
         default: '!'
     }, 
     guildID: String, 
-})
+}); 
 
 module.exports = model('Callisto', GuildModel)
