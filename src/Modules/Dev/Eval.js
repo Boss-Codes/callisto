@@ -1,7 +1,7 @@
 const { Command } = require('../../Core/Classes/Command.js'); 
 const config = require('../../../config.json')
 
-class Ping extends Command { 
+class Eval extends Command { 
     constructor(){
         super({
             name: 'eval', 
