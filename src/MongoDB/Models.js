@@ -2,8 +2,6 @@ const { Schema, model } = require('mongoose')
 
 const GuildModel = new Schema({
     guildID: String, 
-    guildOwner: String, 
-    guildOwnerID: Number, 
     prefix: {
         type: String,
         default: '!'

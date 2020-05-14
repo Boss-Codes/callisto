@@ -1,5 +1,4 @@
 const { Command } = require('../../Core/Classes/Command.js'); 
-const config = require('../../../config.json')
 
 class Eval extends Command { 
     constructor(){
