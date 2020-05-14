@@ -65,8 +65,8 @@ class Help extends Command {
                 })
 
         } 
-        let desc = `**Description:** ${foundCommand.description}\n**Permission Required:** ${foundCommand.permissions}\n**Aliases:** ${foundCommand.aliases.join(',')}\n**Usage:** ${foundCommand.usage}`
-        if (foundCommand.example) desc = `**Description:** ${foundCommand.description}\n**Permission Required:** ${foundCommand.permissions}\n**Aliases:** ${foundCommand.aliases.join(',')}\n**Usage:** ${foundCommand.usage}\n**Examples:** ${foundCommand.example}`
+        let desc = `**Description:** ${foundCommand.helpDetail}\n**User Permission Required:** ${foundCommand.userperms}\n**Aliases:** ${foundCommand.aliases.join(',')}\n**Usage:** ${foundCommand.helpUsage}`
+        if (foundCommand.example && foundCommand.botperms) desc = `**Description:** ${foundCommand.helpDetail}\n**User Permission Required:** ${foundCommand.userperms}\n**Aliases:** ${foundCommand.aliases.join(',')}\n**Usage:** ${foundCommand.helpUsage}\n**Examples:** ${foundCommand.helpExample}`
         return callisto.createMessage(msg.channel.id, {
             embed: { 
                 title: `Help: !${foundCommand.name}`,
