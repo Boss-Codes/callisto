@@ -1,9 +1,19 @@
 const { Command } = require('../../Core/Classes/Command.js'); 
 const config = require('../../../config.json')
 
-class Eval extends Command { 
-    constructor(name, description, usage, example, permissions, aliases){
-        super('eval', 'Evalulates JavaScript code', '!eval <code>', '!eval callisto', 'Developer', ['e'], 'Dev')
+class Ping extends Command { 
+    constructor(){
+        super({
+            name: 'eval', 
+            module: "Dev", 
+            aliases: ['e', 'evaluate'], 
+
+            userperms: 'Dev', 
+            botperms: null, 
+            helpDetail: 'Evaluates JavaScript Code', 
+            helpUsage: '!eval <code>', 
+            helpExample: '!eval callisto.guilds.size' 
+        });
     }
     
     async execute(callisto, msg, args) { 

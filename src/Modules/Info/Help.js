@@ -2,8 +2,18 @@ const { Command } = require('../../Core/Classes/Command.js');
 const { error } = require('../../Core/Utils/Global.js')
 
 class Help extends Command { 
-    constructor(name, description, usage, example, aliases, module){
-        super('help', 'Lists the bot\'s Commands', '!help [command]', '!help ping', 'User', ['h'], 'Info')
+    constructor(){
+        super({
+            name: 'help', 
+            module: "Info", 
+            aliases: ['h'], 
+
+            userperms: 'User', 
+            botperms: null, 
+            helpDetail: 'Shows the bot\'s commands or information on a specfic command.', 
+            helpUsage: '!help\n!avatar [command]', 
+            helpExample: '!help ping'
+        });
     }
 
     async execute(callisto, msg, args) { 
@@ -33,7 +43,7 @@ class Help extends Command {
         }
 
         const foundCommand = callisto.commands.get(args[0].toLowerCase()); 
-        if (!foundCommand || foundCommand.module === 'Dev') {
+        if (!foundCommand) {
             return callisto.createMessage(msg.channel.id, {
         
                 embed: {
@@ -75,4 +85,3 @@ class Help extends Command {
 
 
 module.exports.cmd = Help;
-

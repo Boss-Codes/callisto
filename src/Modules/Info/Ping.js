@@ -1,8 +1,18 @@
 const { Command } = require('../../Core/Classes/Command.js'); 
 
 class Ping extends Command { 
-    constructor(name, description, usage, aliases, module){
-    super('ping', 'Pings the bot', '!ping', null, 'User', ['pong'], 'Info')
+    constructor(){
+        super({
+            name: 'ping', 
+            module: "Info", 
+            aliases: ['pong'], 
+
+            userperms: 'User', 
+            botperms: null, 
+            helpDetail: 'Pings the bot.', 
+            helpUsage: '!ping', 
+            helpExample: null 
+        });
     }
 
     async execute(callisto, msg) { 

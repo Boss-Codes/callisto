@@ -3,8 +3,18 @@ const { resolveUser } = require('../../Core/Utils/Resolvers.js');
 const { defaultColor, error } = require('../../Core/Utils/Global.js')
 
 class Avatar extends Command { 
-    constructor(name, description, usage, example, permissions, aliases, module){
-        super('avatar', 'Displays the avatar of a user', '!avatar [user]', '!avatar @boss', 'User', ['av'], 'Info')
+    constructor(){
+        super({
+            name: 'avatar', 
+            module: "Info", 
+            aliases: ['av'], 
+
+            userperms: 'User', 
+            botperms: null, 
+            helpDetail: 'Shows a user\'s avatar.', 
+            helpUsage: '!avatar\n!avatar [user]', 
+            helpExample: '!avatar @boss'
+        });
     }
 
     async execute(callisto, msg, args) {
