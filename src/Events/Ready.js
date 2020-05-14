@@ -1,6 +1,6 @@
 const eris = require('eris'); 
 const { callisto } = require('../../main.js'); 
-const { readFile } = require('fs'); 
+const { defaultColor } = require('../Core/Utils/Global.js')
 let logTime = new Date().toLocaleTimeString(); 
 let logDate = new Date().toLocaleDateString()
 callisto.on('ready', async () => { 
@@ -14,7 +14,7 @@ callisto.on('ready', async () => {
                     name: 'Ready', 
                     icon_url: callisto.user.avatarURL
                 }, 
-                color: '0162255',
+                color: `${defaultColor}`,
     
                 description: `Connected to Discord!\n**Guilds:** ${callisto.guilds.size}\n**Users:** ${callisto.users.size}\n**Time:** ${logDate} (${logTime})`
               }

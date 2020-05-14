@@ -8,7 +8,7 @@ class Eval extends Command {
             module: "Dev", 
             aliases: ['e', 'evaluate'], 
 
-            userperms: 'Dev', 
+            userperms: 'Developer', 
             botperms: null, 
             helpDetail: 'Evaluates JavaScript Code', 
             helpUsage: '!eval <code>', 

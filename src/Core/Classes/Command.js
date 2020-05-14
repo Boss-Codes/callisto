@@ -4,11 +4,11 @@ class Command {
      this.id = this.name; 
      this.module = data.module ?? "default"; 
      this.aliases = data.aliases ?? []; 
-     this.userperms = data.userperms ?? []; 
-     this.botperms = data.botperms ?? []; 
+     this.userperms = data.userperms ?? null; 
+     this.botperms = data.botperms ?? null; 
      this.helpDetail = data.helpDetail ?? "dummy"; 
      this.helpUsage = data.helpUsage ?? "dummy"; 
-     this.helpExample = data.helpExample ?? "dummy";
+     this.helpExample = data.helpExample ?? null;
 
     }
     async execute(){

@@ -8,8 +8,6 @@ class Help extends Command {
             module: "Info", 
             aliases: ['h'], 
 
-            userperms: 'User', 
-            botperms: null, 
             helpDetail: 'Shows the bot\'s commands or information on a specfic command.', 
             helpUsage: '!help\n!avatar [command]', 
             helpExample: '!help ping'
@@ -26,8 +24,7 @@ class Help extends Command {
                 author: { 
                     name: 'Callisto | Help'
                 },
-                thumbnail: {url: callisto.user.avatarURL},
-                color: 3455723,
+                color: `${defaultColor}`,
                 fields: [
                     {
                         name: 'Info', 
@@ -50,8 +47,7 @@ class Help extends Command {
                     author: { 
                         name: 'Callisto | Help'
                     },
-                    thumbnail: {url: callisto.user.avatarURL},
-                    color: 3455723,
+                    color: `${defualtColor}`,
                     fields: [
                         {
                             name: 'Info', 
@@ -66,13 +62,13 @@ class Help extends Command {
 
         } 
         let desc = `**Description:** ${foundCommand.helpDetail}\n**User Permission Required:** ${foundCommand.userperms}\n**Aliases:** ${foundCommand.aliases.join(',')}\n**Usage:** ${foundCommand.helpUsage}`
-        if (foundCommand.example && foundCommand.botperms) desc = `**Description:** ${foundCommand.helpDetail}\n**User Permission Required:** ${foundCommand.userperms}\n**Aliases:** ${foundCommand.aliases.join(',')}\n**Usage:** ${foundCommand.helpUsage}\n**Examples:** ${foundCommand.helpExample}`
+        if (foundCommand.helpExample) desc = `**Description:** ${foundCommand.helpDetail}\n**User Permission Required:** ${foundCommand.userperms}\n**Aliases:** ${foundCommand.aliases.join(', ')}\n**Usage:** ${foundCommand.helpUsage}\n**Examples:** ${foundCommand.helpExample}`
+        if (foundCommand.botperms) desc = `**Description:** ${foundCommand.helpDetail}\n**User Permission Required:** ${foundCommand.userperms}\n**Bot Permissions Required:** ${foundCommand.botperms}\n**Aliases:** ${foundCommand.aliases.join(', ')}\n**Usage:** ${foundCommand.helpUsage}\n**Examples:** ${foundCommand.helpExample}`
         return callisto.createMessage(msg.channel.id, {
             embed: { 
                 title: `Help: !${foundCommand.name}`,
-                thumbnail: {url: callisto.user.avatarURL},
                 description: desc,
-                color: 3455723,
+                color: `${defualtColor}`,
                 footer: { 
                     text: `Syntax: <> = required | [] = optional`
                 }
