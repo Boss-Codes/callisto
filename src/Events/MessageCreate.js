@@ -1,5 +1,5 @@
 const moment = require('moment');
-const { GuildModel } = require('../MongoDB/Models.js')
+const model = require('../MongoDB/Models.js'); 
 const { callisto } = require('../../main.js'); 
 
 callisto.on('messageCreate', async msg => { 
@@ -30,11 +30,3 @@ callisto.on('messageCreate', async msg => {
     }
 })
 
-/*if(msg.content.startsWith(prefix)){
-...
-}else{
-if(msg.content.startsWith(devPrefix)){
-  if(msg.author.id !== config.owner){return;}
-...
-}
-return;*/
