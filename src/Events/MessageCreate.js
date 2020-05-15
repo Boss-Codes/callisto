@@ -1,5 +1,7 @@
 const moment = require('moment');
+const { GuildModel } = require('../MongoDB/Models.js')
 const { callisto } = require('../../main.js'); 
+
 callisto.on('messageCreate', async msg => { 
     let prefix = '!';
     let devPrefix = '$'
