@@ -8,7 +8,7 @@ class Eval extends Command {
             aliases: ['e', 'evaluate'], 
 
             userperms: 'Developer', 
-            botperms: null, 
+            botperms: null,
             helpDetail: 'Evaluates JavaScript Code', 
             helpUsage: '!eval <code>', 
             helpExample: '!eval callisto.guilds.size' 
