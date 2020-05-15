@@ -1,5 +1,5 @@
 const { Command } = require('../../Core/Classes/Command.js'); 
-const { error } = require('../../Core/Utils/Global.js')
+const { error, defaultColor } = require('../../Core/Utils/Global.js')
 
 class Help extends Command { 
     constructor(){
