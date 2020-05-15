@@ -1,6 +1,6 @@
 const { Command } = require('../../Core/Classes/Command.js'); 
 const { resolveUser } = require('../../Core/Utils/Resolvers.js'); 
-const { defaultColor, error } = require('../../Core/Utils/Global.js')
+const { defaultColor, userError } = require('../../Core/Utils/Global.js')
 
 class Avatar extends Command { 
     constructor(){
@@ -25,7 +25,7 @@ class Avatar extends Command {
         }
 
         if(!member) { 
-        return callisto.createMessage(msg.channel.id, `${error}Invalid user!`)
+        return callisto.createMessage(msg.channel.id, `${userError}`)
         }
         callisto.createMessage(msg.channel.id, { 
             embed: { 

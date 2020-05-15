@@ -7,6 +7,7 @@ global.idle = '<:callistoIdle:699782668165840947>'
 global.dnd = '<:callistoDnd:699782811686797432>'
 global.offline = '<:callistoOffline:699782609147789322>'
 global.defaultColor = 65310
+global.userError = '<:callistoError:699782782519607317>Invalid user!'
 
 module.exports = { 
     version: global.version, 
@@ -16,5 +17,6 @@ module.exports = {
     idle: global.idle,
     dnd: global.dnd,
     offline: global, 
-    defaultColor: global.defaultColor
+    defaultColor: global.defaultColor,
+    userError: global.userError
 }
