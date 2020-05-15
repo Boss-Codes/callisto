@@ -7,6 +7,7 @@ class Ping extends Command {
             module: "Info", 
             aliases: ['pong'], 
 
+            userperms: 'User', 
             helpDetail: 'Pings the bot.', 
             helpUsage: '!ping', 
         });

@@ -8,6 +8,7 @@ class Help extends Command {
             module: "Info", 
             aliases: ['h'], 
 
+            userperms: 'User', 
             helpDetail: 'Shows the bot\'s commands or information on a specfic command.', 
             helpUsage: '!help\n!avatar [command]', 
             helpExample: '!help ping'

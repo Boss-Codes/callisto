@@ -9,6 +9,7 @@ class Avatar extends Command {
             module: "Info", 
             aliases: ['av'], 
 
+            userperms: 'User', 
             helpDetail: 'Shows a user\'s avatar.', 
             helpUsage: '!avatar\n!avatar [user]', 
             helpExample: '!avatar @boss'
