@@ -4,7 +4,7 @@ const { defaultColor } = require('../Core/Utils/Global.js')
 let logTime = new Date().toLocaleTimeString(); 
 let logDate = new Date().toLocaleDateString()
 callisto.on('ready', async () => { 
-    callisto.editStatus('online', {name: 'users run !help', type: 2})
+    callisto.editStatus('online', {name: `!help | ${callisto.guilds.size} servers`, type: 1})
     
     callisto.executeWebhook('698643966228431009', process.env.READY_WEBHOOK_TOKEN, { 
 
