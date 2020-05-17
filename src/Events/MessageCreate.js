@@ -3,7 +3,11 @@ const model = require('../MongoDB/Models.js');
 const { callisto } = require('../../main.js'); 
 
 callisto.on('messageCreate', async msg => { 
-    let prefix = '!';
+    let db = await model.findOne({guildID: msg.channel.guild.id})
+    let prefix = db.prefix;
+    if (!prefix) { 
+        prefix = '!'
+    }
     let devPrefix = '$'
     const args = msg.content.slice(prefix.length).trim().split(/ +/g); 
     const cmd = args.shift().toLowerCase(); 

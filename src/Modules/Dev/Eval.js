@@ -16,6 +16,7 @@ class Eval extends Command {
     }
     
     async execute(callisto, msg, args) { 
+        const db = require('mongoose');
         if(!process.env.OWNER_ID.includes(msg.author.id)) return; 
         const content = msg.content.split(' ').slice(1).join(' ');
             const result = new Promise((resolve, reject) => resolve(eval(content)));

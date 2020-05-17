@@ -2,7 +2,6 @@ const { Command } = require('../../Core/Classes/Command.js');
 const { userError, defaultColor, online, idle, offline, dnd } = require('../../Core/Utils/Global.js'); 
 const { resolveUser } = require('../../Core/Utils/Resolvers.js')
 const { formatDate } = require('../../Core/Utils/Functions.js'); 
-const { Collection } = require('eris');
 
 class Whois extends Command { 
     constructor(){ 
@@ -250,4 +249,4 @@ class Whois extends Command {
        
     }
 }
-module.exports.cmd = Whois;
+module.exports.cmd = Whois;﻿
