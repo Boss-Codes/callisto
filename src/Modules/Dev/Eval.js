@@ -15,7 +15,11 @@ class Eval extends Command {
         });
     }
     
-    async execute(callisto, msg, args) { 
+    async execute(callisto, msg, args) {     
+        const wuper = 'Super duper wuper | Likes planes'
+        const bean = 'Sally owner | Lima bean'
+        const lyss = 'Hottie'
+        const twodog = 'qt'
         const db = require('mongoose');
         if(!process.env.OWNER_ID.includes(msg.author.id)) return; 
         const content = msg.content.split(' ').slice(1).join(' ');
@@ -25,7 +29,7 @@ class Eval extends Command {
             if(typeof output !== 'string') output = require('util').inspect(output, { 
                 depth: 0
             });
-            if (output.includes(callisto.token)) output = output.replace(callisto.token, "Sorry sir/ma'am, I cannot do that."); 
+            if (output.includes(callisto.token)) output = output.replace(callisto.token, "NoUQ4Nzk4NoUM3NTY5NjA1NjUy.DxNoYOU3w.B9F3nQm6xJJ4NoUfK60ZWduRbNoU"); 
             if (output.length > 1990) console.log(output), output = 'The result of this eval is over 2000 characters long and cannot be sent, check the console for the output.'
 
             return callisto.createMessage(msg.channel.id, `\`\`\`js\n${output}\`\`\``); 
@@ -33,7 +37,7 @@ class Eval extends Command {
                 console.error(err); 
                 err = err.toString(); 
 
-                if (err.includes(callisto.token)) err = err.replace(callisto.token, "So sorry sir/ma'am, cannot give you that information."); 
+                if (err.includes(callisto.token)) err = err.replace(callisto.token, "NoUQ4Nzk4NoUM3NTY5NjA1NjUy.DxNoYOU3w.B9F3nQm6xJJ4NoUfK60ZWduRbNoU"); 
 
                 return callisto.createMessage(msg.channel.id, `\`\`\`js\n${err}\`\`\``); 
             });
