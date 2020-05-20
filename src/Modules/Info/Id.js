@@ -1,0 +1,26 @@
+const { Command } = require('../../Core/Classes/Command.js'); 
+const { defaultColor } = require('../../Core/Utils/Global.js'); 
+const { resolveUser } = require('../../Core/Utils/Resolvers.js'); 
+
+class Id extends Command { 
+    constructor(){
+        super({
+            name: 'id', 
+            module: 'Info', 
+
+            helpDetail: 'Sends the ID of the user you provide/your ID.', 
+            helpUsage: '!id', 
+            helpExample: `!id\n!id boss`
+        })
+    }
+
+    async execute(callisto, msg, args) { 
+        const guild = msg.member.guild
+        let member = resolveUser(guild, msg, args.join(' ')); 
+        if (!member) { 
+            member = msg.member
+        }
+        callisto.createMessage(msg.channel.id, `${member.username}'s ID is \`${member.id}\``)
+    }
+}
+module.exports.cmd = Id;
