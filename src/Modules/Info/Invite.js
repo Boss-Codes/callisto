@@ -7,7 +7,8 @@ class Invite extends Command {
             name: 'invite', 
             module: 'Info', 
             aliases: ['inv', 'invitation'],
-
+            
+            userperms: 'User',
             helpDetail: 'Sends an invite link for the bot.', 
             helpUsage: '!invite'
         })

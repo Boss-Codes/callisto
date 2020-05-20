@@ -8,6 +8,7 @@ class Id extends Command {
             name: 'id', 
             module: 'Info', 
 
+            userperms: 'User',
             helpDetail: 'Sends the ID of the user you provide/your ID.', 
             helpUsage: '!id', 
             helpExample: `!id\n!id boss`

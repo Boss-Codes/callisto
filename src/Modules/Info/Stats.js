@@ -8,7 +8,8 @@ class Stats extends Command {
             name: 'stats', 
             module: 'Info', 
             aliases: ['info', 'botinfo', 'botinformation'], 
-
+            
+            userperms: 'User',
             helpDetail: 'Shows bot information.', 
             helpUsage: `!stats`
         })

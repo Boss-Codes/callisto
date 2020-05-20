@@ -6,7 +6,8 @@ class Support extends Command {
         super({
             name: 'support', 
             module: 'Info', 
-
+            
+            userperms: 'User',
             helpDetail: 'Sends an invite link for the bot\'s support server.', 
             helpUsage: '!support'
         })
