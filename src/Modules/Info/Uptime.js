@@ -29,7 +29,7 @@ class Uptime extends Command {
                 color: defaultColor, 
                 description: `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`, 
                 footer: { 
-                    text: `PID: ${process.pid} | Callisto | Cluster 0 | Shard 0`
+                    text: `Callisto | dev | PPID: ${process.ppid} | Cluster 0 | Shard 0`
                 }
             }
         }
