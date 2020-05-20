@@ -1,5 +1,6 @@
 const global = {}
 global.version = 'v1.0.0'
+global.modules = '2'
 global.success = '<:callistoSuccess:699782547235799080>'
 global.error = '<:callistoError:699782782519607317>'
 global.online = '<:callistoOnline:699782570950524938>'
@@ -14,6 +15,7 @@ global.noRole = '<:callistoError:699782782519607317>Provide a role!'
 
 module.exports = { 
     version: global.version, 
+    modules: global.modules,
     success: global.success, 
     error: global.error, 
     online: global.online, 
