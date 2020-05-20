@@ -8,6 +8,9 @@ global.dnd = '<:callistoDnd:699782811686797432>'
 global.offline = '<:callistoOffline:699782609147789322>'
 global.defaultColor = 65310
 global.userError = '<:callistoError:699782782519607317>Invalid user!'
+global.roleError = '<:callistoError:699782782519607317>Invalid role!'
+global.noUser = '<:callistoError:699782782519607317>Provide a user!'
+global.noRole = '<:callistoError:699782782519607317>Provide a role!'
 
 module.exports = { 
     version: global.version, 
@@ -18,5 +21,8 @@ module.exports = {
     dnd: global.dnd,
     offline: global, 
     defaultColor: global.defaultColor,
-    userError: global.userError
+    userError: global.userError,
+    roleError: global.roleError, 
+    noUser: global.noUser, 
+    noRole: global.noRole
 }
