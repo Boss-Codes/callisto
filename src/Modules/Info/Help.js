@@ -62,7 +62,7 @@ class Help extends Command {
                 })
 
         } 
-        let desc = `**Description:** ${foundCommand.helpDetail}\n**User Permissions Required:** ${foundCommand.userperms}\n**Aliases:** ${foundCommand.aliases.join(',')}\n**Usage:** ${foundCommand.helpUsage}`
+        let desc = `**Description:** ${foundCommand.helpDetail}\n**User Permissions Required:** ${foundCommand.userperms}\n**Aliases:** ${foundCommand.aliases.join(', ')}\n**Usage:** ${foundCommand.helpUsage}`
         if (foundCommand.helpExample) desc = `**Description:** ${foundCommand.helpDetail}\n**User Permissions Required:** ${foundCommand.userperms}\n**Aliases:** ${foundCommand.aliases.join(', ')}\n**Usage:** ${foundCommand.helpUsage}\n**Examples:** ${foundCommand.helpExample}`
         if (foundCommand.botperms) desc = `**Description:** ${foundCommand.helpDetail}\n**User Permissions Required:** ${foundCommand.userperms}\n**Bot Permissions Required:** ${foundCommand.botperms}\n**Aliases:** ${foundCommand.aliases.join(', ')}\n**Usage:** ${foundCommand.helpUsage}`
         if (foundCommand.helpExample && foundCommand.botperms) desc = `**Description:** ${foundCommand.helpDetail}\n**User Permissions Required:** ${foundCommand.userperms}\n**Bot Permissions Required:** ${foundCommand.botperms}\n**Aliases:** ${foundCommand.aliases.join(', ')}\n**Usage:** ${foundCommand.helpUsage}\n**Examples:** ${foundCommand.helpExample}`

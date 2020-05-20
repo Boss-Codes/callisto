@@ -6,8 +6,8 @@ class Command {
      this.aliases = data.aliases ?? []; 
      this.userperms = data.userperms; 
      this.botperms = data.botperms; 
-     this.helpDetail = data.helpDetail ?? "dummy"; 
-     this.helpUsage = data.helpUsage ?? "dummy"; 
+     this.helpDetail = data.helpDetail ?? "Some idiot forgot to add a helpDetail!"; 
+     this.helpUsage = data.helpUsage ?? null; 
      this.helpExample = data.helpExample ?? null;
 
     }
