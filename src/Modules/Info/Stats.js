@@ -1,6 +1,5 @@
 const { Command } = require('../../Core/Classes/Command.js'); 
 const { defaultColor, version, modules } = require('../../Core/Utils/Global.js'); 
-const { os } = require('os');
 
 class Stats extends Command { 
     constructor(){
