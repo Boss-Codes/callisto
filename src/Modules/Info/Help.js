@@ -17,6 +17,7 @@ class Help extends Command {
 
     async execute(callisto, msg, args) { 
         const infoCommands = callisto.commands.filter(c => c.module === 'Info');
+        const funCommands = callisto.commands.filter(c => c.module === 'Fun')
         if (!args.length) {
         
         return callisto.createMessage(msg.channel.id, {
@@ -31,6 +32,10 @@ class Help extends Command {
                         name: 'Info', 
                         value: infoCommands.map(c => c.name).join(', ')
                     }, 
+                    { 
+                        name: 'Fun', 
+                        value: funCommands.map(c => c.name).join(', ')
+                    }
                     
                 ]
               
