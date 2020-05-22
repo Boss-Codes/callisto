@@ -1,12 +1,13 @@
 const eris = require('eris'); 
 const { callisto } = require('../../main.js'); 
 const { defaultColor } = require('../Core/Utils/Global.js')
+const config = require('../../config.json'); 
 let logTime = new Date().toLocaleTimeString(); 
 let logDate = new Date().toLocaleDateString()
 callisto.on('ready', async () => { 
     callisto.editStatus('online', {name: `!help | ${callisto.guilds.size} servers`, type: 0})
     
-    callisto.executeWebhook('698643966228431009', process.env.READY_WEBHOOK_TOKEN, { 
+    callisto.executeWebhook('698643966228431009', config.ready_webhook, { 
 
             embeds: [
              {

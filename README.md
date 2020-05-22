@@ -18,7 +18,7 @@ Callisto is a Discord multi-purpose bot, designed to help run your server. It's 
 - Full event logging 
 
 ## Contributing 
-If you want to contribute and help out with the development of Eve, feel free to DM me on Discord (boss#0001), or make a merge request and I will review it and give my feedback! 
+If you want to contribute and help out with the development of Callisto, feel free to DM me on Discord (boss#0001), or make a merge request and I will review it and give my feedback! 
 
 ## License 
 Callisto is licensed under the GNU GPLv-3 License: 
@@ -30,7 +30,7 @@ If you plan to self-host this bot, it's not reccomended but you can try. A mini-
 
 ## Self-Hosting 
 1) Clone the repository 
-2) Edit the config.json file with your prefix, id's and etc
+2) Edit the config.json file 
 3) Make a .env file and put the token in there. 
 4) Install all the dependencies 
 5) `node .` 

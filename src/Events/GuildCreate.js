@@ -1,6 +1,7 @@
 const GuildModel = require('../MongoDB/Models.js'); 
 const { callisto } = require('../../main.js'); 
 const { defaultColor } = require('../Core/Utils/Global.js')
+const config = require('../../config.json')
 
 callisto.on('guildCreate', async guild => { 
     const owner = callisto.users.get(guild.ownerID)
@@ -8,7 +9,7 @@ callisto.on('guildCreate', async guild => {
 
     await guildThing.save()
 
-    callisto.executeWebhook('710337395425542206', process.env.GUILD_CREATE_WEBHOOK_TOKEN, { 
+    callisto.executeWebhook('710337395425542206', config.guild_create_webhook, { 
 
         embeds: [
          {

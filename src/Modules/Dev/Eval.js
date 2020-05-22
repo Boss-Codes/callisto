@@ -1,4 +1,5 @@
 const { Command } = require('../../Core/Classes/Command.js'); 
+const config = require('../../../config.json')
 
 class Eval extends Command { 
     constructor(){
@@ -21,8 +22,8 @@ class Eval extends Command {
         const lyss = 'Hottie'
         const twodog = 'qt'
         const db = require('mongoose');
-        if(!process.env.OWNER_ID.includes(msg.author.id)) return; 
-        const content = msg.content.split(' ').slice(1).join(' ');
+        if(!config.owners.includes(msg.author.id)) return; 
+            const content = msg.content.split(' ').slice(1).join(' ');
             const result = new Promise((resolve, reject) => resolve(eval(content)));
 
         return result.then(output => { 
