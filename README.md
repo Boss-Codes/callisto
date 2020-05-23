@@ -35,4 +35,4 @@ If you plan to self-host this bot, it's not reccomended but you can try. A mini-
 4) Install all the dependencies 
 5) `node .` 
 
-*This is a basic rundown, it requires some knowledge of coding to do* 
+*This is a basic rundown, it requires some knowledge of coding to do + mongo db setup* 
