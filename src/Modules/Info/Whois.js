@@ -112,6 +112,9 @@ class Whois extends Command {
             if (member.id == '252541269602074635') { 
                 ackArray.push('Chocolate Chipped, Cutie')
             }
+            if (member.id == '395526710101278721') { 
+                ackArray.push('DBL Moderator, Best Mod, Cutie')
+            }
             return ackArray; 
         }
         /* Server Moderator, Manager, and Administrator */
@@ -171,10 +174,10 @@ class Whois extends Command {
             }
         }
         /* If Statements for the embed */
-        if(member.nick){
-            data.embed.description = `${member.username}#${member.discriminator} (${member.nick})\n${member.mention}`
-        }else { 
+        if(!member.nick){
             data.embed.description = `${member.username}#${member.discriminator}\n${member.mention}`
+        }else { 
+            data.embed.description = `${member.username}#${member.discriminator} (${member.nick})\n${member.mention}`
         }
 
         if (member.status == 'online') { 
