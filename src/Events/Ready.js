@@ -7,7 +7,7 @@ let logDate = new Date().toLocaleDateString()
 callisto.on('ready', async () => { 
     callisto.editStatus('online', {name: `!help | ${callisto.guilds.size} servers`, type: 0})
     
-    callisto.executeWebhook('698643966228431009', config.ready_webhook, { 
+    callisto.executeWebhook('698643966228431009', process.env.READY_WEBHOOK, { 
 
             embeds: [
              {

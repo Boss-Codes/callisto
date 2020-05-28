@@ -9,7 +9,7 @@ callisto.on('guildCreate', async guild => {
 
     await guildThing.save()
 
-    callisto.executeWebhook('710337395425542206', config.guild_create_webhook, { 
+    callisto.executeWebhook('710337395425542206', process.env.GUILD_MANAGER_WEBHOOK, { 
 
         embeds: [
          {
