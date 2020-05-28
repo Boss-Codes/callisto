@@ -2,8 +2,6 @@
     "admins": [], 
     "staff": [], 
     "owners": "344954369285947392",
-    "guild_create_webhook": "MnKHlWc_0CrJE3CUcAFWg_XNMbj_VAEiuTM1QkTuHEHd49sj7gTmQ5ih2yCbB6ZNNGwK", 
-    "ready_webhook": "M6SS-bj4r-A87B4ExjlCNiYuMzmwAt92OhaoK3YVXQD6F6DoLg5X_-rjFypR9EBtvIZ4", 
     "defaultPrefix": "!"
 }
 
